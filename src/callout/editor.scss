@@ -1,0 +1,39 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.wp-block-gutenbox-callout  {
+	border-left: 5px solid;
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 2em;
+    padding: 16px 25px 16px 20px;
+
+	&.is-style-blue {
+	    background: #e8f4ff;
+	    border-color: #bed1e6;
+	}
+
+    &.is-style-green {
+    	background: #e5fadc;
+    	border-color: #bbdaaf;
+    }
+
+    &.is-style-red {
+    	background: #fde8e8;
+    	border-color: #e7aaaa;
+    }
+
+    &.is-style-yello {
+	    background: #fffcd5;
+    	border-color: #e7dca4;
+    }
+
+    &.is-style-grey {
+	    background: #f1f1f1;
+	    border-color: #cfcfcf;
+    }
+}

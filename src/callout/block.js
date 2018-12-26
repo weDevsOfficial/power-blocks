@@ -11,6 +11,9 @@ import './editor.scss';
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
+const {
+	RichText,
+} = wp.editor;
 
 /**
  * Register: aa Gutenberg Block.
@@ -25,13 +28,34 @@ const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.b
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'gutenbox/info-box', {
+registerBlockType( 'gutenbox/callout', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'Info Box' ), // Block title.
-	icon: 'shield', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+	title: __( 'Callout', 'gutenbox' ), // Block title.
+	description: __( 'Disaply a small but important chunk of information to call attention.', 'gutenbox' ),
+	icon: 'format-status', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'gutenbox', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
-		__( 'Info' ),
+		__( 'Callout', 'gutenbox' ),
+	],
+	attributes: {
+		title: {
+			type: 'array',
+			source: 'children',
+			selector: 'h2',
+		},
+		content: {
+			type: 'array',
+			source: 'children',
+			selector: 'p',
+		}
+	},
+
+	styles: [
+		{ name: 'blue', label: __( 'Blue', 'gutenbox' ), isDefault: true },
+		{ name: 'green', label: __( 'Green', 'gutenbox' ) },
+		{ name: 'red', label: __( 'Red', 'gutenbox' ) },
+		{ name: 'grey', label: __( 'Grey', 'gutenbox' ) },
+		{ name: 'yello', label: __( 'Yello', 'gutenbox' ) },
 	],
 
 	/**
@@ -42,15 +66,42 @@ registerBlockType( 'gutenbox/info-box', {
 	 *
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
 	 */
-	edit: function( props ) {
-		// Creates a <p class='wp-block-Gutenbox-block-blocks'></p>.
+	edit: ( props ) => {
+		const {
+			className,
+			attributes: {
+				title,
+				content,
+			},
+			setAttributes
+		} = props;
+
+		const onChangeTitle = ( value ) => {
+			setAttributes( { title: value } );
+		};
+
+		const onChangeContent = ( newContent ) => {
+			setAttributes( { content: newContent } );
+		};
+
+		// console.log(props);
+
 		return (
-			<div className={ props.className }>
-				<p>— Hello from the backend.</p>
-				<p>
-					Gutenbox BLOCK: <code>blocks</code> is a new Gutenberg block
-				</p>
-			</div>
+			<section className={ props.className }>
+				<RichText
+					tagName="h2"
+					placeholder={ __( 'Info box title...', 'gutenbox' ) }
+					value={ title }
+					onChange={ onChangeTitle }
+				/>
+
+				<RichText
+					tagName="p"
+					placeholder={ __( 'Info box title...', 'gutenbox' ) }
+					onChange={ onChangeContent }
+					value={ content }
+				/>
+			</section>
 		);
 	},
 
@@ -63,13 +114,19 @@ registerBlockType( 'gutenbox/info-box', {
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
 	 */
 	save: function( props ) {
+		const {
+			className,
+			attributes: {
+				title,
+				content,
+			},
+		} = props;
+
 		return (
-			<div>
-				<p>— Hello from the frontend.</p>
-				<p>
-					Gutenbox BLOCK: <code>blocks</code> is a new Gutenberg block.
-				</p>
-			</div>
+			<section className={ className }>
+				<RichText.Content tagName="h2" value={ title } />
+				<RichText.Content tagName="p" value={ content } />
+			</section>
 		);
 	},
 } );

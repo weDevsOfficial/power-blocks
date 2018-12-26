@@ -5,9 +5,14 @@
   "scripts": {
     "start": "cgb-scripts start",
     "build": "cgb-scripts build",
-    "eject": "cgb-scripts eject"
+    "eject": "cgb-scripts eject",
+    "zip": "./bin/build-zip.sh"
   },
   "dependencies": {
+    "@wordpress/i18n": "^3.1.0",
     "cgb-scripts": "1.14.0"
+  },
+  "devDependencies": {
+    "@wordpress/babel-plugin-makepot": "^2.1.2"
   }
 }

@@ -1,18 +1,1 @@
-/**
- * #.# Common SCSS
- *
- * Can include things like variables and mixins
- * that are used across the project.
-*/
-/**
- * #.# Styles
- *
- * CSS for both Frontend+Backend.
- */
-.wp-block-gutenbox-info-box {
-  background: orangered;
-  border: 0.2rem solid #292929;
-  color: #292929;
-  margin: 0 auto;
-  max-width: 740px;
-  padding: 2rem; }
+.wp-block-gutenbox-callout{border-left:5px solid;color:#333;font-size:14px;margin-bottom:2em;padding:16px 25px 16px 20px}.wp-block-gutenbox-callout.is-style-blue{background:#e8f4ff;border-color:#bed1e6}.wp-block-gutenbox-callout.is-style-green{background:#e5fadc;border-color:#bbdaaf}.wp-block-gutenbox-callout.is-style-red{background:#fde8e8;border-color:#e7aaaa}.wp-block-gutenbox-callout.is-style-yello{background:#fffcd5;border-color:#e7dca4}.wp-block-gutenbox-callout.is-style-grey{background:#f1f1f1;border-color:#cfcfcf}
