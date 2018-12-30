@@ -1,4 +1,4 @@
-=== Gutenbox - Essential Gutenberg Blocks ===
+=== Power Blocks - Powerful and Feature Rich Blocks for Gutenberg ===
 Contributors: tareq1988, wedevs
 Donate link: https://tareq.co/donate/
 Tags: block, blocks, gutenberg, gutenberg blocks, Gutenberg blockg, page builder
@@ -13,15 +13,19 @@ Ultimate Collection of Essential Blocks for Gutenberg Editor.
 
 == Description ==
 
-Gutenbox is the ultimate collection of essential blocks for the Gutenberg editor.
+Power Blocks is the ultimate collection of essential blocks for the Gutenberg editor.
+
+= Available Blocks =
+
+ * **Callout Block** - Disaply a small but important chunk of information to call attention.
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/gutenbox` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins` directory, or install the plugin through the WordPress plugins screen directly.
 
 == Frequently Asked Questions ==
 
-= What are the requirements to use Gutenbox? =
+= What are the requirements to use Power Blocks? =
 
 You only need to have the latest version of WordPress on your website.
 

@@ -1,5 +1,5 @@
 <?php
-namespace Gutenbox;
+namespace PowerBlocks;
 
 /**
  * Blocks
@@ -21,12 +21,10 @@ class Blocks {
 	 * @since 0.1.0
 	 */
 	function register_block_category( $categories, $post ) {
-		return array_merge(
-			$categories,
-			array(
+		return array_merge( $categories, array(
 				array(
-					'slug'  => 'gutenbox',
-					'title' => __( 'Gutenbox', 'gutenbox' ),
+					'slug'  => 'power-blocks',
+					'title' => __( 'Power Blocks', 'power-blocks' ),
 				),
 			)
 		);
@@ -41,8 +39,8 @@ class Blocks {
     function frontend_assets() { // phpcs:ignore
     	// Styles.
     	wp_enqueue_style(
-    		'gutenbox-style-css', // Handle.
-    		plugins_url( 'dist/blocks.style.build.css', GUTENBOX_ROOT_FILE ), // Block style CSS.
+    		'powerblocks-style-css', // Handle.
+    		plugins_url( 'dist/blocks.style.build.css', POWERBLOCKS_ROOT_FILE ), // Block style CSS.
     		array( 'wp-editor' ), // Dependency to include the CSS after it.
     		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
     	);
@@ -61,8 +59,8 @@ class Blocks {
     function editor_assets() { // phpcs:ignore
     	// Scripts.
     	wp_enqueue_script(
-    		'gutenbox-block-js', // Handle.
-    		plugins_url( '/dist/blocks.build.js', GUTENBOX_ROOT_FILE ), // Block.build.js: We register the block here. Built with Webpack.
+    		'powerblocks-block-js', // Handle.
+    		plugins_url( '/dist/blocks.build.js', POWERBLOCKS_ROOT_FILE ), // Block.build.js: We register the block here. Built with Webpack.
     		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), // Dependencies, defined above.
     		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: File modification time.
     		true // Enqueue the script in the footer.
@@ -70,8 +68,8 @@ class Blocks {
 
     	// Styles.
     	wp_enqueue_style(
-    		'gutenbox-block-editor-css', // Handle.
-    		plugins_url( 'dist/blocks.editor.build.css', GUTENBOX_ROOT_FILE ), // Block editor CSS.
+    		'powerblocks-block-editor-css', // Handle.
+    		plugins_url( 'dist/blocks.editor.build.css', POWERBLOCKS_ROOT_FILE ), // Block editor CSS.
     		array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
     		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
     	);

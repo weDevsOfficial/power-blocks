@@ -26,7 +26,7 @@ warning () {
 	echo -e "\n${YELLOW_BOLD}$1${COLOR_RESET}\n"
 }
 
-status "💃 Time to release Gutenbox 🕺"
+status "💃 Time to release Power Blocks 🕺"
 
 status "Generating PHP file for wordpress.org to parse translations... 👷‍♂️"
 # npx pot-to-php ./languages/gutenbox.pot ./languages/gutenbox-translations.php gutenbox
@@ -36,10 +36,10 @@ status "Creating archive... 🎁"
 
 build_files=$(ls dist/*.{js,css})
 
-zip -r gutenbox.zip \
-	gutenbox.php \
+zip -r power-blocks.zip \
+	power-blocks.php \
 	includes/*.php \
 	$build_files \
 	readme.txt
 
-success "Done. You've built Gutenbox! 🎉 "
+success "Done. You've built Power Blocks! 🎉 "

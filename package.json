@@ -1,12 +1,13 @@
 {
-  "name": "gutenbox",
+  "name": "power-blocks",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "cgb-scripts start",
     "build": "cgb-scripts build",
     "eject": "cgb-scripts eject",
-    "zip": "./bin/build-zip.sh"
+    "zip": "./bin/build-zip.sh",
+    "deploy": "./bin/deploy.sh"
   },
   "dependencies": {
     "@wordpress/i18n": "^3.1.0",

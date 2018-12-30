@@ -1,28 +1,28 @@
 <?php
 /**
- * Plugin Name: Gutenbox
- * Plugin URI: https://github.com/weDevsOfficial/gutenbox/
- * Description: Ultimate blocks for Gutenberg
+ * Plugin Name: Power Blocks for Gutenberg
+ * Plugin URI: https://github.com/weDevsOfficial/power-blocks/
+ * Description: Powerful and feature rich blocks for the WordPress Gutenberg editor.
  * Author: weDevs
- * Author URI: https://wedevs.com/
+ * Author URI: https://getpowerblocks.com/
  * Version: 0.1.0
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  */
 
 /**
- * Gutenbox Helper is free software: you can redistribute it and/or modify
+ * PowerBlocks is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 2 of the License, or
  * any later version.
  *
- * Gutenbox Helper is distributed in the hope that it will be useful,
+ * PowerBlocks is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Gutenbox Helper. If not, see <http://www.gnu.org/licenses/>.
+ * along with PowerBlocks. If not, see <http://www.gnu.org/licenses/>.
  *
  */
 
@@ -30,11 +30,11 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
- * Gutenbox class
+ * PowerBlocks class
  *
- * @class Gutenbox The class that holds the entire Gutenbox plugin
+ * @class PowerBlocks The class that holds the entire PowerBlocks plugin
  */
-class Gutenbox {
+class PowerBlocks {
 
     /**
      * Plugin version
@@ -49,7 +49,7 @@ class Gutenbox {
     protected static $_instance = null;
 
     /**
-     * Constructor for the Gutenbox class
+     * Constructor for the PowerBlocks class
      *
      * Sets up all the appropriate hooks and actions
      * within our plugin.
@@ -71,9 +71,9 @@ class Gutenbox {
     }
 
     /**
-     * Initializes the Gutenbox() class
+     * Initializes the PowerBlocks() class
      *
-     * Checks for an existing Gutenbox() instance
+     * Checks for an existing PowerBlocks() instance
      * and if it doesn't find one, creates it.
      */
     public static function instance() {
@@ -91,9 +91,9 @@ class Gutenbox {
      * @return void
      */
     public function define_constants() {
-        define( 'GUTENBOX_VERSION', $this->version );
-        define( 'GUTENBOX_ROOT_FILE', __FILE__ );
-        define( 'GUTENBOX_ROOT_PATH', plugin_dir_path( __FILE__ ) );
+        define( 'POWERBLOCKS_VERSION', $this->version );
+        define( 'POWERBLOCKS_ROOT_FILE', __FILE__ );
+        define( 'POWERBLOCKS_ROOT_PATH', plugin_dir_path( __FILE__ ) );
     }
 
     /**
@@ -120,13 +120,13 @@ class Gutenbox {
      * Placeholder for activation function
      */
     public function activate() {
-    	$installed = get_option( 'gutenbox_installed' );
+    	$installed = get_option( 'powerblocks_installed' );
 
     	if ( ! $installed ) {
-    	    update_option( 'gutenbox_installed', time() );
+    	    update_option( 'powerblocks_installed', time() );
     	}
 
-    	update_option( 'gutenbox_version', GUTENBOX_VERSION );
+    	update_option( 'powerblocks_version', PowerBlocks_VERSION );
     }
 
     /**
@@ -138,7 +138,7 @@ class Gutenbox {
 
     	require_once __DIR__ . '/includes/Blocks.php';
 
-    	new Gutenbox\Blocks();
+    	new PowerBlocks\Blocks();
     }
 
     /**
@@ -150,13 +150,11 @@ class Gutenbox {
             return;
         }
 
-        $install = sprintf( '<p><a href="%s" class="button">Install WooCommerce</a> or <a href="%s" class="button">Install Easy Digital Downloads</a></p>', $woo, $edd );
-
         echo '<div class="notice notice-error">';
-        echo '<p>Gutenbox requires Gutenberg plugin installed or WordPress 5.0.</p>';
+        echo '<p>Power Blocks requires Gutenberg plugin installed or WordPress 5.0.</p>';
         echo '</div>';
     }
 
-} // Gutenbox
+} // PowerBlocks
 
-Gutenbox::instance();
+PowerBlocks::instance();

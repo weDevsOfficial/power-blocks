@@ -28,14 +28,14 @@ const {
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'gutenbox/callout', {
+registerBlockType( 'power-blocks/callout', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'Callout', 'gutenbox' ), // Block title.
-	description: __( 'Disaply a small but important chunk of information to call attention.', 'gutenbox' ),
+	title: __( 'Callout', 'power-blocks' ), // Block title.
+	description: __( 'Disaply a small but important chunk of information to call attention.', 'power-blocks' ),
 	icon: 'format-status', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-	category: 'gutenbox', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
+	category: 'power-blocks', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
-		__( 'Callout', 'gutenbox' ),
+		__( 'Callout', 'power-blocks' ),
 	],
 	attributes: {
 		title: {
@@ -51,11 +51,11 @@ registerBlockType( 'gutenbox/callout', {
 	},
 
 	styles: [
-		{ name: 'blue', label: __( 'Blue', 'gutenbox' ), isDefault: true },
-		{ name: 'green', label: __( 'Green', 'gutenbox' ) },
-		{ name: 'red', label: __( 'Red', 'gutenbox' ) },
-		{ name: 'grey', label: __( 'Grey', 'gutenbox' ) },
-		{ name: 'yello', label: __( 'Yello', 'gutenbox' ) },
+		{ name: 'blue', label: __( 'Blue', 'power-blocks' ), isDefault: true },
+		{ name: 'green', label: __( 'Green', 'power-blocks' ) },
+		{ name: 'red', label: __( 'Red', 'power-blocks' ) },
+		{ name: 'grey', label: __( 'Grey', 'power-blocks' ) },
+		{ name: 'yello', label: __( 'Yello', 'power-blocks' ) },
 	],
 
 	/**
@@ -90,14 +90,14 @@ registerBlockType( 'gutenbox/callout', {
 			<section className={ props.className }>
 				<RichText
 					tagName="h2"
-					placeholder={ __( 'Info box title...', 'gutenbox' ) }
+					placeholder={ __( 'Callout title...', 'power-blocks' ) }
 					value={ title }
 					onChange={ onChangeTitle }
 				/>
 
 				<RichText
 					tagName="p"
-					placeholder={ __( 'Info box title...', 'gutenbox' ) }
+					placeholder={ __( 'Callout description...', 'power-blocks' ) }
 					onChange={ onChangeContent }
 					value={ content }
 				/>
