@@ -55,7 +55,7 @@ registerBlockType( 'power-blocks/callout', {
 		{ name: 'green', label: __( 'Green', 'power-blocks' ) },
 		{ name: 'red', label: __( 'Red', 'power-blocks' ) },
 		{ name: 'grey', label: __( 'Grey', 'power-blocks' ) },
-		{ name: 'yello', label: __( 'Yello', 'power-blocks' ) },
+		{ name: 'yellow', label: __( 'Yellow', 'power-blocks' ) },
 	],
 
 	/**
